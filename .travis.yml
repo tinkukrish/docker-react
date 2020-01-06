@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t tinkukrish/docker-react -f Dockerfile.dev .
+
+script:
+  -  docker run tinkukrish/docker-react npm run test -- --coverage
+  
+  
